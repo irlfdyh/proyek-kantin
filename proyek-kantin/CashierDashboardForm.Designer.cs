@@ -1,6 +1,6 @@
 ﻿namespace proyek_kantin
 {
-    partial class AdminDashboard
+    partial class CashierDashboardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_toko = new System.Windows.Forms.Button();
+            this.btnCanteen = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_kasir = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.adminKasirUserControl1 = new proyek_kantin.AdminKasirUserControl();
+            this.btnTransaction = new System.Windows.Forms.Button();
+            this.foodTransaction1 = new proyek_kantin.FoodTransaction();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,15 +43,15 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btn_toko);
+            this.panel1.Controls.Add(this.btnCanteen);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btn_kasir);
+            this.panel1.Controls.Add(this.btnTransaction);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 562);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
@@ -73,17 +71,18 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Welcome Admin";
             // 
-            // btn_toko
+            // btnCanteen
             // 
-            this.btn_toko.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_toko.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_toko.Location = new System.Drawing.Point(0, 222);
-            this.btn_toko.Name = "btn_toko";
-            this.btn_toko.Size = new System.Drawing.Size(247, 75);
-            this.btn_toko.TabIndex = 3;
-            this.btn_toko.Text = "Toko";
-            this.btn_toko.UseVisualStyleBackColor = true;
-            this.btn_toko.Click += new System.EventHandler(this.Btn_toko_Click);
+            this.btnCanteen.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCanteen.FlatAppearance.BorderSize = 0;
+            this.btnCanteen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCanteen.Location = new System.Drawing.Point(0, 222);
+            this.btnCanteen.Name = "btnCanteen";
+            this.btnCanteen.Size = new System.Drawing.Size(247, 75);
+            this.btnCanteen.TabIndex = 3;
+            this.btnCanteen.Text = "Daftar Kantin";
+            this.btnCanteen.UseVisualStyleBackColor = true;
+            this.btnCanteen.Click += new System.EventHandler(this.BtnCanteen_Click);
             // 
             // panel2
             // 
@@ -92,42 +91,36 @@
             this.panel2.Size = new System.Drawing.Size(77, 54);
             this.panel2.TabIndex = 2;
             // 
-            // btn_kasir
+            // btnTransaction
             // 
-            this.btn_kasir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_kasir.FlatAppearance.BorderSize = 0;
-            this.btn_kasir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_kasir.Location = new System.Drawing.Point(0, 141);
-            this.btn_kasir.Name = "btn_kasir";
-            this.btn_kasir.Size = new System.Drawing.Size(247, 75);
-            this.btn_kasir.TabIndex = 1;
-            this.btn_kasir.Text = "Kasir";
-            this.btn_kasir.UseVisualStyleBackColor = true;
-            this.btn_kasir.Click += new System.EventHandler(this.Button1_Click);
+            this.btnTransaction.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnTransaction.FlatAppearance.BorderSize = 0;
+            this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransaction.Location = new System.Drawing.Point(0, 141);
+            this.btnTransaction.Name = "btnTransaction";
+            this.btnTransaction.Size = new System.Drawing.Size(247, 75);
+            this.btnTransaction.TabIndex = 1;
+            this.btnTransaction.Text = "Transaksi";
+            this.btnTransaction.UseVisualStyleBackColor = true;
+            this.btnTransaction.Click += new System.EventHandler(this.BtnTransaction_Click);
             // 
-            // imageList1
+            // foodTransaction1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.foodTransaction1.Location = new System.Drawing.Point(253, 0);
+            this.foodTransaction1.Name = "foodTransaction1";
+            this.foodTransaction1.Size = new System.Drawing.Size(736, 562);
+            this.foodTransaction1.TabIndex = 3;
             // 
-            // adminKasirUserControl1
-            // 
-            this.adminKasirUserControl1.Location = new System.Drawing.Point(249, 0);
-            this.adminKasirUserControl1.Name = "adminKasirUserControl1";
-            this.adminKasirUserControl1.Size = new System.Drawing.Size(736, 562);
-            this.adminKasirUserControl1.TabIndex = 1;
-            // 
-            // AdminDashboard
+            // CashierDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 562);
-            this.Controls.Add(this.adminKasirUserControl1);
+            this.Controls.Add(this.foodTransaction1);
             this.Controls.Add(this.panel1);
-            this.Name = "AdminDashboard";
+            this.Name = "CashierDashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dashboard Admin";
+            this.Text = "CashierDashboardForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -135,15 +128,12 @@
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_toko;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_kasir;
-        private System.Windows.Forms.ImageList imageList1;
-        private AdminKasirUserControl adminKasirUserControl1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCanteen;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnTransaction;
+        private FoodTransaction foodTransaction1;
     }
 }
-

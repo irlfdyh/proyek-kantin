@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCashierDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCashierDataForm.Designer.cs">
+      <DependentUpon>AddCashierDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="admin-dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,13 +72,70 @@
     <Compile Include="AdminKasirUserControl.Designer.cs">
       <DependentUpon>AdminKasirUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CashierDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashierDashboardForm.Designer.cs">
+      <DependentUpon>CashierDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodCanteen1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodCanteen1Form.Designer.cs">
+      <DependentUpon>FoodCanteen1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodCanteen2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodCanteen2Form.Designer.cs">
+      <DependentUpon>FoodCanteen2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodCanteen3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodCanteen3Form.Designer.cs">
+      <DependentUpon>FoodCanteen3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodCanteen4Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodCanteen4Form.Designer.cs">
+      <DependentUpon>FoodCanteen4Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FoodTransaction.Designer.cs">
+      <DependentUpon>FoodTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCashierDataForm.resx">
+      <DependentUpon>AddCashierDataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="admin-dashboard.resx">
       <DependentUpon>admin-dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminKasirUserControl.resx">
       <DependentUpon>AdminKasirUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierDashboardForm.resx">
+      <DependentUpon>CashierDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodCanteen1Form.resx">
+      <DependentUpon>FoodCanteen1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodCanteen2Form.resx">
+      <DependentUpon>FoodCanteen2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodCanteen3Form.resx">
+      <DependentUpon>FoodCanteen3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodCanteen4Form.resx">
+      <DependentUpon>FoodCanteen4Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodTransaction.resx">
+      <DependentUpon>FoodTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
