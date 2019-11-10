@@ -1,6 +1,6 @@
 ﻿namespace proyek_kantin
 {
-    partial class FoodTransaction
+    partial class CashierCanteenListUserControl
     {
         /// <summary> 
         /// Required designer variable.

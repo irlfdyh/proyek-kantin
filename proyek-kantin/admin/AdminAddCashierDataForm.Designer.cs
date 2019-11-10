@@ -1,6 +1,6 @@
 ﻿namespace proyek_kantin
 {
-    partial class AddCashierDataForm
+    partial class AdminAddCashierDataForm
     {
         /// <summary>
         /// Required designer variable.
@@ -208,7 +208,6 @@
             this.Name = "AddCashierDataForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCashierDataForm";
-            this.Activated += new System.EventHandler(this.AddCashierDataForm_Activated);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

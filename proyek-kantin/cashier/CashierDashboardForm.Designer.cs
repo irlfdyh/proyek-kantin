@@ -34,7 +34,7 @@
             this.btnCanteen = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTransaction = new System.Windows.Forms.Button();
-            this.foodTransaction1 = new proyek_kantin.FoodTransaction();
+            this.foodTransaction1 = new proyek_kantin.CashierCanteenListUserControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +134,6 @@
         private System.Windows.Forms.Button btnCanteen;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTransaction;
-        private FoodTransaction foodTransaction1;
+        private CashierCanteenListUserControl foodTransaction1;
     }
 }

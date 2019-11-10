@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace proyek_kantin
 {
-    public partial class FoodTransaction : UserControl
+    public partial class CashierCanteenListUserControl : UserControl
     {
-        public FoodTransaction()
+        public CashierCanteenListUserControl()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace proyek_kantin
         /** Button for canteen 1 */
         private void Button1_Click(object sender, EventArgs e)
         {
-            FoodCanteen1Form canOne = new FoodCanteen1Form();
+            CashierCanteenOneForm canOne = new CashierCanteenOneForm();
             canOne.Show();
 
             CashierDashboardForm form = new CashierDashboardForm();
@@ -30,7 +30,7 @@ namespace proyek_kantin
         /** Button for canteen 2 */
         private void Button2_Click(object sender, EventArgs e)
         {
-            FoodCanteen2Form canTwo = new FoodCanteen2Form();
+            CashierCanteenTwoForm canTwo = new CashierCanteenTwoForm();
             canTwo.Show();
 
             CashierDashboardForm form = new CashierDashboardForm();
@@ -40,7 +40,7 @@ namespace proyek_kantin
         /** Button for canteen 3 */
         private void Button3_Click(object sender, EventArgs e)
         {
-            FoodCanteen3Form canThree = new FoodCanteen3Form();
+            CashierCanteenThreeForm canThree = new CashierCanteenThreeForm();
             canThree.Show();
 
             CashierDashboardForm form = new CashierDashboardForm();
@@ -50,7 +50,7 @@ namespace proyek_kantin
         /** Button for canteen 4 */
         private void Button4_Click(object sender, EventArgs e)
         {
-            FoodCanteen4Form canFour = new FoodCanteen4Form();
+            CashierCanteenFourForm canFour = new CashierCanteenFourForm();
             canFour.Show();
 
             CashierDashboardForm form = new CashierDashboardForm();

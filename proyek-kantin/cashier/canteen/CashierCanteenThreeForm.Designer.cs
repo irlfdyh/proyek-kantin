@@ -1,6 +1,6 @@
 ﻿namespace proyek_kantin
 {
-    partial class FoodCanteen3Form
+    partial class CashierCanteenThreeForm
     {
         /// <summary>
         /// Required designer variable.

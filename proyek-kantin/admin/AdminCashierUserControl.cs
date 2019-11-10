@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace proyek_kantin
 {
-    public partial class AdminKasirUserControl : UserControl
+    public partial class AdminCashierUserControl : UserControl
     {
-        public AdminKasirUserControl()
+        public AdminCashierUserControl()
         {
             InitializeComponent();
             LoadData();
@@ -30,7 +24,7 @@ namespace proyek_kantin
         /** this button is for move to new form */
         private void Button2_Click(object sender, EventArgs e)
         {
-            AddCashierDataForm add = new AddCashierDataForm();
+            AdminAddCashierDataForm add = new AdminAddCashierDataForm();
             add.Show();
         }
 
@@ -42,7 +36,7 @@ namespace proyek_kantin
         /** to update data is here */
         private void Button3_Click(object sender, EventArgs e)
         {
-            AddCashierDataForm dataForm = new AddCashierDataForm();
+            AdminAddCashierDataForm dataForm = new AdminAddCashierDataForm();
             dataForm.tbUsername.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
             dataForm.Show();
             dataForm.label7.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -57,11 +51,10 @@ namespace proyek_kantin
 
         public void LoadData() {
             MySqlConnection connection = new MySqlConnection(myConnection);
-            connection.Open();
             try {
-                MySqlConnection addConnection = new MySqlConnection(myConnection);
-                MySqlCommand sqlCommand = addConnection.CreateCommand();
-                sqlCommand.CommandText = "SELECT * FROM kasir";
+                connection.Open();
+                MySqlCommand sqlCommand = connection.CreateCommand();
+                sqlCommand.CommandText = "SELECT * FROM petugas WHERE kelas = 1";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sqlCommand);
                 DataSet dataSet = new DataSet();
                 adapter.Fill(dataSet);
@@ -77,7 +70,7 @@ namespace proyek_kantin
             connection.Open();
             try {
                 MySqlCommand sqlCommand = connection.CreateCommand();
-                sqlCommand.CommandText = "DELETE FROM kasir WHERE id = '"+userId+"'";
+                sqlCommand.CommandText = "DELETE FROM petugas WHERE id = '"+userId+"'";
                 sqlCommand.ExecuteNonQuery();
             } catch (Exception e) {
                 MessageBox.Show(e.Message.ToString());

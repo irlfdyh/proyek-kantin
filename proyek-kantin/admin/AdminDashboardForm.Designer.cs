@@ -36,7 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_kasir = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.adminKasirUserControl1 = new proyek_kantin.AdminKasirUserControl();
+            this.adminKasirUserControl1 = new proyek_kantin.AdminCashierUserControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,7 +141,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_kasir;
         private System.Windows.Forms.ImageList imageList1;
-        private AdminKasirUserControl adminKasirUserControl1;
+        private AdminCashierUserControl adminKasirUserControl1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
     }

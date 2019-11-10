@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace proyek_kantin
 {
-    public partial class AddCashierDataForm : Form
+    public partial class AdminAddCashierDataForm : Form
     {
-        public AddCashierDataForm()
+        public AdminAddCashierDataForm()
         {
             InitializeComponent();
             label7.Visible = true;
@@ -33,13 +33,14 @@ namespace proyek_kantin
 
             try {
                 command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO kasir(username, password, nama, alamat, no_hp) " +
-                    "VALUES (@username, @password, @nama, @alamat, @noHp)";
+                command.CommandText = "INSERT INTO petugas(username, password, nama, alamat, no_hp, kelas) " +
+                    "VALUES (@username, @password, @name, @address, @phone, @class)";
                 command.Parameters.AddWithValue("@username", tbUsername.Text);
                 command.Parameters.AddWithValue("@password", tbPassword.Text);
-                command.Parameters.AddWithValue("@nama", tbName.Text);
-                command.Parameters.AddWithValue("@alamat", tbAddress.Text);
-                command.Parameters.AddWithValue("@noHp", tbPhone.Text.ToString());
+                command.Parameters.AddWithValue("@name", tbName.Text);
+                command.Parameters.AddWithValue("@address", tbAddress.Text);
+                command.Parameters.AddWithValue("@phone", tbPhone.Text.ToString());
+                command.Parameters.AddWithValue("@class", 1);
                 command.ExecuteNonQuery();
             } catch (Exception e) {
                 MessageBox.Show("error when insert data, '"+ e.Message.ToString() +"'");
@@ -51,7 +52,7 @@ namespace proyek_kantin
         private void BtnSimpan_Click(object sender, EventArgs e)
         {
             addData();
-            this.Dispose();
+            this.Close();
         }
 
         private void State() {
@@ -62,9 +63,5 @@ namespace proyek_kantin
             }
         }
 
-        private void AddCashierDataForm_Activated(object sender, EventArgs e)
-        {
-
-        }
     }
 }

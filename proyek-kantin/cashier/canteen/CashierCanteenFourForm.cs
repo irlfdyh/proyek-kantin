@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace proyek_kantin
 {
-    public partial class FoodCanteen3Form : Form
+    public partial class CashierCanteenFourForm : Form
     {
-        public FoodCanteen3Form()
+        public CashierCanteenFourForm()
         {
             InitializeComponent();
         }
