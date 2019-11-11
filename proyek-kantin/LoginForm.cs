@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using proyek_kantin.balance;
 
 namespace proyek_kantin
 {
@@ -41,41 +42,69 @@ namespace proyek_kantin
             connection = new MySqlConnection(myConnection);
             connection.Open();
 
-            if (username != "" && password != "") {
-                try {
-                    sqlCommand = connection.CreateCommand();
-                    sqlCommand.CommandText = query;
-                    reader = sqlCommand.ExecuteReader();
+            /** check are text box is null or filled */
+            try {
+
+                sqlCommand = connection.CreateCommand();
+                sqlCommand.CommandText = query;
+                reader = sqlCommand.ExecuteReader();
+
+                if (username != "" && password != "") {
 
                     if (reader.HasRows) {
                         while (reader.Read()) {
+                            /** 
+                             * get data response and take 'kelas' and 'nama' response 
+                             * 
+                             * on the database where 'kelas' = 1 is cashier
+                             * and 'kelas' = 2 is balance administrator
+                             */
                             string userClass = reader["kelas"].ToString();
+                            string userName = reader["nama"].ToString();
                             if (userClass == "1") {
-                                MessageBox.Show("Login Sebagai kasir");
+                                /** 
+                                 * what is different between for example 
+                                 * cashier.Show() and cashier.ShowDialog() if using cashier.Show() 
+                                 * when using this.Close() the application will closed, and if using 
+                                 * cashier.ShowDialog() this form will close and will focus to another
+                                 * form will be open, for example  we will open AdminForm the application 
+                                 * will focus to AdminForm
+                                 */
+                                MessageBox.Show("Selamat datang "+userName+"");
 
                                 CashierDashboardForm cashier = new CashierDashboardForm();
-                                cashier.Show();
-                                this.Hide();
+                                cashier.ShowDialog();
+                                this.Close();
                             } else if (userClass == "2") {
-                                MessageBox.Show("Login Topup");
+                                MessageBox.Show("Selamat datang '" + userName + "'");
+
+                                BalanceAdministratorForm balance = new BalanceAdministratorForm();
+                                balance.ShowDialog();
+                                this.Close();
                             }
                         }
                     } else if (username == "admin" && password == "admin") {
                         MessageBox.Show("welcome admin");
 
                         AdminDashboard admin = new AdminDashboard();
-                        admin.Show();
-                        this.Hide();
+                        admin.ShowDialog();
+                        this.Close();
+
                     }
-                    connection.Close();
-                } catch (Exception e) {
+
+                } else if (username == "") {
+                    MessageBox.Show("username tidak boleh kosong!!");
+                }
+                else if (password == ""){
+                    MessageBox.Show("password tidak boleh kosong!!");
+                }
+
+                connection.Close();
+
+            } catch (Exception e) {
                     MessageBox.Show(e.Message.ToString());
                 }
-            } else if (username == "") {
-                MessageBox.Show("username tidak boleh kosong!!");
-            } else if (password == "") {
-                MessageBox.Show("password tidak boleh kosong!!");
-            }
+        
         }
 
     }

@@ -78,6 +78,12 @@
     <Compile Include="admin\AdminCashierUserControl.Designer.cs">
       <DependentUpon>AdminCashierUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="balance\BalanceAdministratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="balance\BalanceAdministratorForm.Designer.cs">
+      <DependentUpon>BalanceAdministratorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="cashier\CashierDashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,8 +183,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="balance\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
