@@ -32,5 +32,6 @@ namespace proyek_kantin
             foodTransaction1.BringToFront();
             foodTransaction1.Show();
         }
+
     }
 }

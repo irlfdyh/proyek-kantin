@@ -16,7 +16,7 @@ namespace proyek_kantin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CashierCanteenOneForm());
+            Application.Run(new LoginForm());
         }
     }
 }

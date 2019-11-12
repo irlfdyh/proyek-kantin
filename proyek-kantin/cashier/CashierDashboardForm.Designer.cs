@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbCashierName = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelCashierName = new System.Windows.Forms.Label();
             this.btnCanteen = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnTransaction = new System.Windows.Forms.Button();
             this.foodTransaction1 = new proyek_kantin.CashierCanteenListUserControl();
             this.panel1.SuspendLayout();
@@ -41,10 +41,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.tbCashierName);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelCashierName);
             this.panel1.Controls.Add(this.btnCanteen);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnTransaction);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -52,6 +52,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 562);
             this.panel1.TabIndex = 2;
+            // 
+            // tbCashierName
+            // 
+            this.tbCashierName.Location = new System.Drawing.Point(12, 530);
+            this.tbCashierName.Name = "tbCashierName";
+            this.tbCashierName.Size = new System.Drawing.Size(100, 20);
+            this.tbCashierName.TabIndex = 6;
+            this.tbCashierName.Visible = false;
             // 
             // panel3
             // 
@@ -61,15 +69,15 @@
             this.panel3.Size = new System.Drawing.Size(13, 75);
             this.panel3.TabIndex = 5;
             // 
-            // label1
+            // labelCashierName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(96, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 21);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Welcome Admin";
+            this.labelCashierName.AutoSize = true;
+            this.labelCashierName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCashierName.Location = new System.Drawing.Point(12, 23);
+            this.labelCashierName.Name = "labelCashierName";
+            this.labelCashierName.Size = new System.Drawing.Size(137, 21);
+            this.labelCashierName.TabIndex = 4;
+            this.labelCashierName.Text = "Welcome Admin";
             // 
             // btnCanteen
             // 
@@ -83,13 +91,6 @@
             this.btnCanteen.Text = "Daftar Kantin";
             this.btnCanteen.UseVisualStyleBackColor = true;
             this.btnCanteen.Click += new System.EventHandler(this.BtnCanteen_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(13, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(77, 54);
-            this.panel2.TabIndex = 2;
             // 
             // btnTransaction
             // 
@@ -130,10 +131,10 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCanteen;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTransaction;
         private CashierCanteenListUserControl foodTransaction1;
+        public System.Windows.Forms.TextBox tbCashierName;
+        public System.Windows.Forms.Label labelCashierName;
     }
 }

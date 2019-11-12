@@ -68,7 +68,9 @@
             this.tbCustBalance = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbCustRemBalance = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Btn_Pay = new System.Windows.Forms.Button();
+            this.tbCanteenName = new System.Windows.Forms.TextBox();
+            this.tbCashierName = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -452,24 +454,43 @@
             this.tbCustRemBalance.Size = new System.Drawing.Size(115, 20);
             this.tbCustRemBalance.TabIndex = 15;
             // 
-            // button2
+            // Btn_Pay
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(859, 483);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 27);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Bayar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_Pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Pay.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Pay.Location = new System.Drawing.Point(859, 483);
+            this.Btn_Pay.Name = "Btn_Pay";
+            this.Btn_Pay.Size = new System.Drawing.Size(102, 27);
+            this.Btn_Pay.TabIndex = 22;
+            this.Btn_Pay.Text = "Bayar";
+            this.Btn_Pay.UseVisualStyleBackColor = true;
+            this.Btn_Pay.Click += new System.EventHandler(this.Btn_Pay_Click);
+            // 
+            // tbCanteenName
+            // 
+            this.tbCanteenName.Location = new System.Drawing.Point(32, 489);
+            this.tbCanteenName.Name = "tbCanteenName";
+            this.tbCanteenName.Size = new System.Drawing.Size(100, 20);
+            this.tbCanteenName.TabIndex = 23;
+            this.tbCanteenName.Text = "kantin 1";
+            this.tbCanteenName.Visible = false;
+            // 
+            // tbCashierName
+            // 
+            this.tbCashierName.Location = new System.Drawing.Point(149, 489);
+            this.tbCashierName.Name = "tbCashierName";
+            this.tbCashierName.Size = new System.Drawing.Size(100, 20);
+            this.tbCashierName.TabIndex = 23;
             // 
             // CashierCanteenOneForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 524);
+            this.Controls.Add(this.tbCashierName);
+            this.Controls.Add(this.tbCanteenName);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Btn_Pay);
             this.Controls.Add(this.Btn_Check_Balance);
             this.Controls.Add(this.tbNoodlePrice);
             this.Controls.Add(this.tbVegetablePrice);
@@ -560,6 +581,8 @@
         private System.Windows.Forms.TextBox tbCustBalance;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbCustRemBalance;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_Pay;
+        private System.Windows.Forms.TextBox tbCanteenName;
+        public System.Windows.Forms.TextBox tbCashierName;
     }
 }

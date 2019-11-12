@@ -73,8 +73,11 @@ namespace proyek_kantin
                                 MessageBox.Show("Selamat datang "+userName+"");
 
                                 CashierDashboardForm cashier = new CashierDashboardForm();
-                                cashier.ShowDialog();
-                                this.Close();
+                                cashier.Show();
+                                this.Hide();
+
+                                cashier.labelCashierName.Text = "Welcome "+userName+"";
+                                cashier.tbCashierName.Text = userName;
                             } else if (userClass == "2") {
                                 MessageBox.Show("Selamat datang '" + userName + "'");
 
@@ -89,7 +92,8 @@ namespace proyek_kantin
                         AdminDashboard admin = new AdminDashboard();
                         admin.ShowDialog();
                         this.Close();
-
+                    } else {
+                        MessageBox.Show("username atau password salah!!");
                     }
 
                 } else if (username == "") {

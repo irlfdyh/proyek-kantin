@@ -33,6 +33,8 @@ namespace proyek_kantin
         private static int veg = 7000;
         private static int nood = 12000;
 
+        private string customerName = null;
+
         private void price() {
             /** CP is Count Price */
             int riceCP = int.Parse(tbRicePrice.Text);
@@ -61,7 +63,10 @@ namespace proyek_kantin
                 if (reader.HasRows) {
                     while (reader.Read()) {
                         string custBalance = reader["saldo"].ToString();
+                        string custName = reader["nama"].ToString();
                         tbCustBalance.Text = custBalance;
+                        customerName = custName;
+
                     }
                 } else {
                     MessageBox.Show("Id tidak terdaftar");
@@ -69,6 +74,8 @@ namespace proyek_kantin
             } catch (Exception e) {
                 MessageBox.Show(e.Message.ToString());
             }
+
+            connection.Close();
         }
 
         private void balanceRemain() {
@@ -85,6 +92,28 @@ namespace proyek_kantin
             } else if (custBalances > 0) {
                 tbCustRemBalance.Text = custRemBal.ToString();
             }
+        }
+
+        private void updateBalance() {
+            int balRemain = int.Parse(tbCustRemBalance.Text);
+            string custId = tbCustomerId.Text;
+
+            string query = "UPDATE pelanggan SET saldo=@saldo WHERE id = "+custId+"";
+
+
+            connection = new MySqlConnection(myConnection);
+            connection.Open();
+
+            try {
+                sqlCommand = connection.CreateCommand();
+                sqlCommand.CommandText = query;
+                sqlCommand.Parameters.AddWithValue("@saldo", balRemain);
+                sqlCommand.ExecuteNonQuery();
+            } catch (Exception e) {
+                MessageBox.Show(e.Message.ToString());
+            }
+
+            connection.Close();
         }
 
         /** logic for button plus one and minus one */
@@ -226,6 +255,41 @@ namespace proyek_kantin
         {
             getBalance();
             balanceRemain();
+        }
+
+        private void Btn_Pay_Click(object sender, EventArgs e)
+        {
+            int pay = int.Parse(tbPay.Text);
+
+            if (pay > 0) {
+                connection.Open();
+
+                try
+                {
+                    sqlCommand = connection.CreateCommand();
+                    sqlCommand.CommandText = "INSERT INTO transaksi(nama_kantin, nama_pelanggan, total_bayar)" +
+                        "VALUES (@canteenName, @custName, @pay)";
+                    sqlCommand.Parameters.AddWithValue("@canteenName", tbCanteenName.Text);
+                    sqlCommand.Parameters.AddWithValue("@custName", customerName);
+                    sqlCommand.Parameters.AddWithValue("@pay", tbPay.Text.ToString());
+                    sqlCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+
+                connection.Close();
+
+                updateBalance();
+
+                MessageBox.Show("Transaksi Berhasil");
+                this.Close();
+            } else {
+                MessageBox.Show("Belum memesan apapun");
+            }
+
         }
     }
 }
