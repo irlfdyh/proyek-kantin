@@ -42,13 +42,13 @@ namespace proyek_kantin
             connection = new MySqlConnection(myConnection);
             connection.Open();
 
-            /** check are text box is null or filled */
             try {
 
                 sqlCommand = connection.CreateCommand();
                 sqlCommand.CommandText = query;
                 reader = sqlCommand.ExecuteReader();
 
+                /** check are text box is null or filled */
                 if (username != "" && password != "") {
 
                     if (reader.HasRows) {

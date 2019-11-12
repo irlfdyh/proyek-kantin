@@ -7,23 +7,85 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace proyek_kantin
 {
     public partial class CashierCanteenOneForm : Form
     {
+        /** configuration */
+        string myConnection = "Server=localhost;Database=proyek-kantin;Uid=root;pwd='';";
+
+        MySqlConnection connection;
+        MySqlCommand sqlCommand;
+        MySqlDataReader reader;
+
         public CashierCanteenOneForm()
         {
             InitializeComponent();
         }
 
         /** variable for count food order data  */
-        private int labelCount = 1;
+        private static int labelCount = 1;
 
         private static int rice = 5000;
         private static int chick = 10000;
         private static int veg = 7000;
         private static int nood = 12000;
+
+        private void price() {
+            /** CP is Count Price */
+            int riceCP = int.Parse(tbRicePrice.Text);
+            int chickCP = int.Parse(tbChickPrice.Text);
+            int vegCP = int.Parse(tbVegetablePrice.Text);
+            int noodCP = int.Parse(tbNoodlePrice.Text);
+
+            int countPrice = (riceCP+chickCP+vegCP+noodCP);
+            tbPay.Text = countPrice.ToString();
+        }
+
+        private void getBalance() {
+            string custId = tbCustomerId.Text;
+            string query = "SELECT * FROM pelanggan WHERE id = " + custId + "";
+
+
+            connection = new MySqlConnection(myConnection);
+            connection.Open();
+
+            try {
+
+                sqlCommand = connection.CreateCommand();
+                sqlCommand.CommandText = query;
+                reader = sqlCommand.ExecuteReader();
+
+                if (reader.HasRows) {
+                    while (reader.Read()) {
+                        string custBalance = reader["saldo"].ToString();
+                        tbCustBalance.Text = custBalance;
+                    }
+                } else {
+                    MessageBox.Show("Id tidak terdaftar");
+                }
+            } catch (Exception e) {
+                MessageBox.Show(e.Message.ToString());
+            }
+        }
+
+        private void balanceRemain() {
+            int custBalances = int.Parse(tbCustBalance.Text);
+            int pay = int.Parse(tbPay.Text);
+
+            /** this is for counting user remaining balance*/
+            int custRemBal = custBalances - pay;
+
+            if (custBalances > pay) {
+                tbCustRemBalance.Text = custRemBal.ToString();
+            } else if (custBalances > 0 && custRemBal < pay) {
+                MessageBox.Show("Maaf Saldo Anda kurang");
+            } else if (custBalances > 0) {
+                tbCustRemBalance.Text = custRemBal.ToString();
+            }
+        }
 
         /** logic for button plus one and minus one */
         private void Btn_Plus_One_Click(object sender, EventArgs e)
@@ -40,6 +102,9 @@ namespace proyek_kantin
             int riceCount = int.Parse(labelCountRice.Text);
             int countResRice = riceCount + labelCount;
             labelCountRice.Text = countResRice.ToString();
+
+            price();
+            balanceRemain();
         }
 
         private void Btn_Min_One_Click(object sender, EventArgs e)
@@ -54,7 +119,10 @@ namespace proyek_kantin
 
                 int countResRice = riceCount - labelCount;
                 labelCountRice.Text = countResRice.ToString();
-            } 
+            }
+
+            price();
+            balanceRemain();
         }
 
         /** logic for button plus and minus two */
@@ -67,6 +135,9 @@ namespace proyek_kantin
             int chickCount = int.Parse(labelCountChick.Text);
             int countResChick = chickCount + labelCount;
             labelCountChick.Text = countResChick.ToString();
+
+            price();
+            balanceRemain();
         }
 
         private void Btn_Min_Two_Click(object sender, EventArgs e)
@@ -81,6 +152,9 @@ namespace proyek_kantin
                 int countResChick = chickCount - labelCount;
                 labelCountChick.Text = countResChick.ToString();
             }
+
+            price();
+            balanceRemain();
         }
 
         /** this is logic for plus and minus at food three */
@@ -93,6 +167,9 @@ namespace proyek_kantin
             int vegCount = int.Parse(labelCountVeg.Text);
             int countResVeg = vegCount + labelCount;
             labelCountVeg.Text = countResVeg.ToString();
+
+            price();
+            balanceRemain();
         }
 
         private void Btn_Min_Three_Click(object sender, EventArgs e)
@@ -107,6 +184,9 @@ namespace proyek_kantin
                 int countResVeg = vegCount - labelCount;
                 labelCountVeg.Text = countResVeg.ToString();
             }
+
+            price();
+            balanceRemain();
         }
 
         /** button logic for plus and minus at four */
@@ -119,6 +199,9 @@ namespace proyek_kantin
             int noodCount = int.Parse(labelCountNood.Text);
             int countResNood = noodCount + labelCount;
             labelCountNood.Text = countResNood.ToString();
+
+            price();
+            balanceRemain();
         }
 
         private void Btn_Min_Four_Click(object sender, EventArgs e)
@@ -134,6 +217,15 @@ namespace proyek_kantin
                 int countResNood = noodCount - labelCount;
                 labelCountNood.Text = countResNood.ToString();
             }
+
+            price();
+            balanceRemain();
+        }
+
+        private void Btn_Check_Balance_Click(object sender, EventArgs e)
+        {
+            getBalance();
+            balanceRemain();
         }
     }
 }
