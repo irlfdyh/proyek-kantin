@@ -61,6 +61,7 @@ namespace proyek_kantin
                              */
                             string userClass = reader["kelas"].ToString();
                             string userName = reader["nama"].ToString();
+
                             if (userClass == "1") {
                                 /** 
                                  * what is different between for example 
@@ -73,11 +74,11 @@ namespace proyek_kantin
                                 MessageBox.Show("Selamat datang "+userName+"");
 
                                 CashierDashboardForm cashier = new CashierDashboardForm();
-                                cashier.Show();
-                                this.Hide();
+                                cashier.labelCashierName.Text = "Selamat Datang " + userName + "";
+                                cashier.foodTransaction1.tbCashierNameUC.Text = userName;
+                                cashier.ShowDialog();
+                                this.Close();
 
-                                cashier.labelCashierName.Text = "Welcome "+userName+"";
-                                cashier.tbCashierName.Text = userName;
                             } else if (userClass == "2") {
                                 MessageBox.Show("Selamat datang '" + userName + "'");
 
@@ -98,8 +99,7 @@ namespace proyek_kantin
 
                 } else if (username == "") {
                     MessageBox.Show("username tidak boleh kosong!!");
-                }
-                else if (password == ""){
+                } else if (password == ""){
                     MessageBox.Show("password tidak boleh kosong!!");
                 }
 

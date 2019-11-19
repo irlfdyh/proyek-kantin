@@ -17,24 +17,13 @@ namespace proyek_kantin
             InitializeComponent();
         }
 
-        protected string getName() {
-            CashierDashboardForm cashierDashboard = new CashierDashboardForm();
-            string cashierName = cashierDashboard.tbCashierName.Text;
-            return cashierName;
-        }
-
         /** Button for canteen 1 */
         private void Button1_Click(object sender, EventArgs e)
         {
-            CashierDashboardForm cashierDashboard = new CashierDashboardForm();
-            string cashierName = cashierDashboard.tbCashierName.Text;
 
             CashierCanteenOneForm canOne = new CashierCanteenOneForm();
             canOne.Show();
-            canOne.tbCashierName.Text = cashierName;
-
-            CashierDashboardForm form = new CashierDashboardForm();
-            form.Dispose();
+            canOne.tbCashierName.Text = tbCashierNameUC.Text; ;
         }
 
         /** Button for canteen 2 */

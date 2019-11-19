@@ -34,6 +34,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbCashierNameUC = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,20 +104,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Daftar Kantin";
             // 
-            // FoodTransaction
+            // tbCashierNameUC
+            // 
+            this.tbCashierNameUC.Location = new System.Drawing.Point(266, 517);
+            this.tbCashierNameUC.Name = "tbCashierNameUC";
+            this.tbCashierNameUC.Size = new System.Drawing.Size(100, 20);
+            this.tbCashierNameUC.TabIndex = 3;
+            this.tbCashierNameUC.Visible = false;
+            // 
+            // CashierCanteenListUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbCashierNameUC);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Name = "FoodTransaction";
+            this.Name = "CashierCanteenListUserControl";
             this.Size = new System.Drawing.Size(736, 562);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,5 +139,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox tbCashierNameUC;
     }
 }

@@ -332,7 +332,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(552, 125);
+            this.label15.Location = new System.Drawing.Point(552, 231);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 18);
             this.label15.TabIndex = 11;
@@ -341,7 +341,7 @@
             // tbPay
             // 
             this.tbPay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tbPay.Location = new System.Drawing.Point(693, 126);
+            this.tbPay.Location = new System.Drawing.Point(693, 232);
             this.tbPay.Name = "tbPay";
             this.tbPay.Size = new System.Drawing.Size(115, 20);
             this.tbPay.TabIndex = 12;
@@ -375,7 +375,7 @@
             // 
             this.Btn_Check_Balance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Check_Balance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Check_Balance.Location = new System.Drawing.Point(823, 256);
+            this.Btn_Check_Balance.Location = new System.Drawing.Point(823, 158);
             this.Btn_Check_Balance.Name = "Btn_Check_Balance";
             this.Btn_Check_Balance.Size = new System.Drawing.Size(45, 31);
             this.Btn_Check_Balance.TabIndex = 22;
@@ -401,12 +401,13 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Batal";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(552, 316);
+            this.label6.Location = new System.Drawing.Point(552, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 18);
             this.label6.TabIndex = 14;
@@ -414,7 +415,7 @@
             // 
             // tbCustomerId
             // 
-            this.tbCustomerId.Location = new System.Drawing.Point(693, 262);
+            this.tbCustomerId.Location = new System.Drawing.Point(693, 164);
             this.tbCustomerId.Name = "tbCustomerId";
             this.tbCustomerId.Size = new System.Drawing.Size(115, 20);
             this.tbCustomerId.TabIndex = 15;
@@ -423,7 +424,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(552, 264);
+            this.label7.Location = new System.Drawing.Point(552, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(22, 18);
             this.label7.TabIndex = 14;
@@ -431,7 +432,7 @@
             // 
             // tbCustBalance
             // 
-            this.tbCustBalance.Location = new System.Drawing.Point(693, 316);
+            this.tbCustBalance.Location = new System.Drawing.Point(693, 278);
             this.tbCustBalance.Name = "tbCustBalance";
             this.tbCustBalance.Size = new System.Drawing.Size(115, 20);
             this.tbCustBalance.TabIndex = 15;
@@ -441,7 +442,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(552, 362);
+            this.label8.Location = new System.Drawing.Point(552, 326);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 18);
             this.label8.TabIndex = 14;
@@ -449,7 +450,7 @@
             // 
             // tbCustRemBalance
             // 
-            this.tbCustRemBalance.Location = new System.Drawing.Point(693, 362);
+            this.tbCustRemBalance.Location = new System.Drawing.Point(693, 324);
             this.tbCustRemBalance.Name = "tbCustRemBalance";
             this.tbCustRemBalance.Size = new System.Drawing.Size(115, 20);
             this.tbCustRemBalance.TabIndex = 15;
@@ -481,6 +482,7 @@
             this.tbCashierName.Name = "tbCashierName";
             this.tbCashierName.Size = new System.Drawing.Size(100, 20);
             this.tbCashierName.TabIndex = 23;
+            this.tbCashierName.Visible = false;
             // 
             // CashierCanteenOneForm
             // 

@@ -267,10 +267,12 @@ namespace proyek_kantin
                 try
                 {
                     sqlCommand = connection.CreateCommand();
-                    sqlCommand.CommandText = "INSERT INTO transaksi(nama_kantin, nama_pelanggan, total_bayar)" +
-                        "VALUES (@canteenName, @custName, @pay)";
+                    sqlCommand.CommandText = "INSERT INTO transaksi(id_pelanggan, nama_kantin, nama_pelanggan, nama_kasir, total_bayar)" +
+                        "VALUES (@custId, @canteenName, @custName, @cashName, @pay)";
+                    sqlCommand.Parameters.AddWithValue("@custId", tbCustomerId.Text);
                     sqlCommand.Parameters.AddWithValue("@canteenName", tbCanteenName.Text);
                     sqlCommand.Parameters.AddWithValue("@custName", customerName);
+                    sqlCommand.Parameters.AddWithValue("@cashName", tbCashierName.Text);
                     sqlCommand.Parameters.AddWithValue("@pay", tbPay.Text.ToString());
                     sqlCommand.ExecuteNonQuery();
 
@@ -290,6 +292,11 @@ namespace proyek_kantin
                 MessageBox.Show("Belum memesan apapun");
             }
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

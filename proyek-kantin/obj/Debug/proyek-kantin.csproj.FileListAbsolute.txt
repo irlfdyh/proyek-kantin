@@ -25,3 +25,4 @@ C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.C
 C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.CashierCanteenFourForm.resources
 C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.CashierCanteenListUserControl.resources
 C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek-kantin.csprojAssemblyReference.cache
+C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.cashier.TransactionHistoryUserControl.resources

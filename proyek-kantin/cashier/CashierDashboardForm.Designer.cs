@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbCashierName = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelCashierName = new System.Windows.Forms.Label();
             this.btnCanteen = new System.Windows.Forms.Button();
             this.btnTransaction = new System.Windows.Forms.Button();
             this.foodTransaction1 = new proyek_kantin.CashierCanteenListUserControl();
+            this.transactionHistoryUserControl1 = new proyek_kantin.cashier.TransactionHistoryUserControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.tbCashierName);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.labelCashierName);
             this.panel1.Controls.Add(this.btnCanteen);
@@ -52,14 +51,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 562);
             this.panel1.TabIndex = 2;
-            // 
-            // tbCashierName
-            // 
-            this.tbCashierName.Location = new System.Drawing.Point(12, 530);
-            this.tbCashierName.Name = "tbCashierName";
-            this.tbCashierName.Size = new System.Drawing.Size(100, 20);
-            this.tbCashierName.TabIndex = 6;
-            this.tbCashierName.Visible = false;
             // 
             // panel3
             // 
@@ -112,11 +103,19 @@
             this.foodTransaction1.Size = new System.Drawing.Size(736, 562);
             this.foodTransaction1.TabIndex = 3;
             // 
+            // transactionHistoryUserControl1
+            // 
+            this.transactionHistoryUserControl1.Location = new System.Drawing.Point(253, 0);
+            this.transactionHistoryUserControl1.Name = "transactionHistoryUserControl1";
+            this.transactionHistoryUserControl1.Size = new System.Drawing.Size(736, 562);
+            this.transactionHistoryUserControl1.TabIndex = 4;
+            // 
             // CashierDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 562);
+            this.Controls.Add(this.transactionHistoryUserControl1);
             this.Controls.Add(this.foodTransaction1);
             this.Controls.Add(this.panel1);
             this.Name = "CashierDashboardForm";
@@ -133,8 +132,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnCanteen;
         private System.Windows.Forms.Button btnTransaction;
-        private CashierCanteenListUserControl foodTransaction1;
-        public System.Windows.Forms.TextBox tbCashierName;
         public System.Windows.Forms.Label labelCashierName;
+        public CashierCanteenListUserControl foodTransaction1;
+        private cashier.TransactionHistoryUserControl transactionHistoryUserControl1;
     }
 }

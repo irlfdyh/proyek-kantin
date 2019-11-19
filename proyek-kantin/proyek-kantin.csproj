@@ -120,6 +120,12 @@
     <Compile Include="cashier\CashierCanteenListUserControl.Designer.cs">
       <DependentUpon>CashierCanteenListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="cashier\TransactionHistoryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cashier\TransactionHistoryUserControl.Designer.cs">
+      <DependentUpon>TransactionHistoryUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cashier\CashierCanteenListUserControl.resx">
       <DependentUpon>CashierCanteenListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cashier\TransactionHistoryUserControl.resx">
+      <DependentUpon>TransactionHistoryUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

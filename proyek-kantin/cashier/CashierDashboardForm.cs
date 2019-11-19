@@ -23,6 +23,7 @@ namespace proyek_kantin
             panel3.Height = btnTransaction.Height;
             panel3.Top = btnTransaction.Top;
             foodTransaction1.Hide();
+            transactionHistoryUserControl1.Show();
         }
 
         private void BtnCanteen_Click(object sender, EventArgs e)
