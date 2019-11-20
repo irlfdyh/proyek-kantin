@@ -126,6 +126,7 @@
     <Compile Include="cashier\TransactionHistoryUserControl.Designer.cs">
       <DependentUpon>TransactionHistoryUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

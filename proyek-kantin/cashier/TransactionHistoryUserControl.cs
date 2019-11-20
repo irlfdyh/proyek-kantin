@@ -40,6 +40,27 @@ namespace proyek_kantin.cashier
             }
         }
 
+        public void loadDataId(string transId) {
+            string query = "SELECT * FROM transaksi where id = "+transId+"";
+            MySqlConnection connection = new MySqlConnection(myConnection);
+
+            try
+            {
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = query;
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+        }
+
         private void DataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             tbTransactionId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -48,6 +69,43 @@ namespace proyek_kantin.cashier
         private void Btn_Refresh_Data_Click(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        private void Btn_Print_All_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Data Transaksi";
+            printer.SubTitle = "test";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = false;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(dataGridView1);
+        }
+
+        private void Btn_Print_Data_Click(object sender, EventArgs e)
+        {
+            string id = tbTransactionId.Text;
+            if (id == "")
+            {
+                MessageBox.Show("Pilih transaksi terlebih dahulu");
+            }
+            else
+            {
+                loadDataId(id);
+                DGVPrinter printer = new DGVPrinter();
+                printer.Title = "Data Transaksi";
+                printer.SubTitle = "test";
+                printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                printer.PageNumbers = false;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dataGridView1);
+            }
         }
     }
 }

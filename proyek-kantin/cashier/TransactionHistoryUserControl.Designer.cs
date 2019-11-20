@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbTransactionId = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Btn_Print_All = new System.Windows.Forms.Button();
             this.Btn_Print_Data = new System.Windows.Forms.Button();
-            this.tbTransactionId = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.Btn_Refresh_Data = new System.Windows.Forms.Button();
@@ -64,6 +64,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Riwayat Tansaksi";
             // 
+            // tbTransactionId
+            // 
+            this.tbTransactionId.Location = new System.Drawing.Point(316, 43);
+            this.tbTransactionId.Name = "tbTransactionId";
+            this.tbTransactionId.Size = new System.Drawing.Size(100, 20);
+            this.tbTransactionId.TabIndex = 6;
+            this.tbTransactionId.Visible = false;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -88,6 +96,7 @@
             this.Btn_Print_All.TabIndex = 5;
             this.Btn_Print_All.Text = "Cetak Semua Data";
             this.Btn_Print_All.UseVisualStyleBackColor = false;
+            this.Btn_Print_All.Click += new System.EventHandler(this.Btn_Print_All_Click);
             // 
             // Btn_Print_Data
             // 
@@ -104,14 +113,7 @@
             this.Btn_Print_Data.TabIndex = 5;
             this.Btn_Print_Data.Text = "Cetak Data Transaksi";
             this.Btn_Print_Data.UseVisualStyleBackColor = false;
-            // 
-            // tbTransactionId
-            // 
-            this.tbTransactionId.Location = new System.Drawing.Point(316, 43);
-            this.tbTransactionId.Name = "tbTransactionId";
-            this.tbTransactionId.Size = new System.Drawing.Size(100, 20);
-            this.tbTransactionId.TabIndex = 6;
-            this.tbTransactionId.Visible = false;
+            this.Btn_Print_Data.Click += new System.EventHandler(this.Btn_Print_Data_Click);
             // 
             // textBox2
             // 
