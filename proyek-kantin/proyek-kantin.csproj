@@ -60,6 +60,12 @@
     <Compile Include="admin\AdminAddCashierDataForm.Designer.cs">
       <DependentUpon>AdminAddCashierDataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="admin\AdminBalanceUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="admin\AdminBalanceUserControl.Designer.cs">
+      <DependentUpon>AdminBalanceUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="admin\AdminDashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,18 @@
     </Compile>
     <Compile Include="admin\AdminCashierUserControl.Designer.cs">
       <DependentUpon>AdminCashierUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminTopUpUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="admin\AdminTopUpUserControl.Designer.cs">
+      <DependentUpon>AdminTopUpUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminTransactionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="admin\AdminTransactionUserControl.Designer.cs">
+      <DependentUpon>AdminTransactionUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="balance\BalanceAdministratorForm.cs">
       <SubType>Form</SubType>
@@ -138,6 +156,9 @@
     <EmbeddedResource Include="admin\AdminAddCashierDataForm.resx">
       <DependentUpon>AdminAddCashierDataForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="admin\AdminBalanceUserControl.resx">
+      <DependentUpon>AdminBalanceUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="admin\AdminDashboardForm.resx">
       <DependentUpon>AdminDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +167,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin\AdminCashierUserControl.resx">
       <DependentUpon>AdminCashierUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\AdminTopUpUserControl.resx">
+      <DependentUpon>AdminTopUpUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\AdminTransactionUserControl.resx">
+      <DependentUpon>AdminTransactionUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cashier\CashierDashboardForm.resx">
       <DependentUpon>CashierDashboardForm.cs</DependentUpon>

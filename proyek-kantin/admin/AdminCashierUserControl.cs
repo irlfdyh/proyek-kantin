@@ -14,11 +14,22 @@ namespace proyek_kantin
         }
 
         string myConnection = "Server=localhost;Database=proyek-kantin;Uid=root;pwd='';";
-        public string userId = null;
+        string userId = null;
+        string username = null;
+        string password = null;
+        string name = null;
+        string address = null;
+        string phone = null;
+
 
         private void DataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             userId = (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            username = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+            password = (dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+            name = (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+            address = (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+            phone = (dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
         }
 
         /** this button is for move to new form */
@@ -26,6 +37,7 @@ namespace proyek_kantin
         {
             AdminAddCashierDataForm add = new AdminAddCashierDataForm();
             add.Show();
+            add.label1.Text = "Tambah Data";
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -36,10 +48,21 @@ namespace proyek_kantin
         /** to update data is here */
         private void Button3_Click(object sender, EventArgs e)
         {
-            AdminAddCashierDataForm dataForm = new AdminAddCashierDataForm();
-            dataForm.tbUsername.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            dataForm.Show();
-            dataForm.label7.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            var id = userId;
+            if (id == null) {
+                MessageBox.Show("Pilih kasir terlebih dahulu");
+            } else {
+                AdminAddCashierDataForm dataForm = new AdminAddCashierDataForm();
+                dataForm.Show();
+                dataForm.tbId.Text = id;
+                dataForm.tbUsername.Text = username;
+                dataForm.tbPassword.Text = password;
+                dataForm.tbName.Text = name;
+                dataForm.tbAddress.Text = address;
+                dataForm.tbPhone.Text = phone;
+
+                dataForm.label1.Text = "Ubah Data";
+            }
         }
 
         /** this buttton is for deleting some data */

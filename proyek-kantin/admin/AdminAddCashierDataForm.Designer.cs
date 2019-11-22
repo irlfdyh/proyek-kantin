@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Btn_Cancel = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.btnSimpan = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.Btn_Cancel);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.tbPhone);
             this.panel2.Controls.Add(this.btnSimpan);
@@ -66,6 +68,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(422, 427);
             this.panel2.TabIndex = 4;
+            // 
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.BackColor = System.Drawing.Color.Maroon;
+            this.Btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Cancel.ForeColor = System.Drawing.Color.White;
+            this.Btn_Cancel.Location = new System.Drawing.Point(218, 371);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(82, 31);
+            this.Btn_Cancel.TabIndex = 12;
+            this.Btn_Cancel.Text = "Batal";
+            this.Btn_Cancel.UseVisualStyleBackColor = false;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
             // label6
             // 
@@ -90,9 +105,9 @@
             this.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSimpan.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimpan.ForeColor = System.Drawing.Color.White;
-            this.btnSimpan.Location = new System.Drawing.Point(306, 368);
+            this.btnSimpan.Location = new System.Drawing.Point(306, 371);
             this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(82, 26);
+            this.btnSimpan.Size = new System.Drawing.Size(82, 31);
             this.btnSimpan.TabIndex = 8;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
@@ -169,7 +184,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.tbId);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -177,15 +192,13 @@
             this.panel1.Size = new System.Drawing.Size(422, 73);
             this.panel1.TabIndex = 3;
             // 
-            // label7
+            // tbId
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(365, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "null";
+            this.tbId.Location = new System.Drawing.Point(288, 32);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(100, 20);
+            this.tbId.TabIndex = 2;
+            this.tbId.Visible = false;
             // 
             // label1
             // 
@@ -198,14 +211,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tambah Data";
             // 
-            // AddCashierDataForm
+            // AdminAddCashierDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 498);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "AddCashierDataForm";
+            this.Name = "AdminAddCashierDataForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCashierDataForm";
             this.panel2.ResumeLayout(false);
@@ -221,17 +234,18 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSimpan;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbPhone;
+        public System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.Button Btn_Cancel;
+        public System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox tbUsername;
-        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox tbAddress;
+        public System.Windows.Forms.TextBox tbName;
+        public System.Windows.Forms.TextBox tbPassword;
+        public System.Windows.Forms.TextBox tbPhone;
     }
 }
