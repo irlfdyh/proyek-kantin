@@ -72,7 +72,7 @@ namespace proyek_kantin
             LoadData();
         }
 
-        public void LoadData() {
+        private void LoadData() {
             MySqlConnection connection = new MySqlConnection(myConnection);
             try {
                 connection.Open();

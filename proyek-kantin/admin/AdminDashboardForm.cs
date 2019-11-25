@@ -18,65 +18,87 @@ namespace proyek_kantin
             showCashier();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            showCashier();
-        }
-
-        private void Btn_toko_Click(object sender, EventArgs e)
-        {
-            showBank();
-        }
-
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
-            showHistory();
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            showTop();
-        }
 
         private void showCashier()
         {
-            panel3.Height = btn_kasir.Height;
-            panel3.Top = btn_kasir.Top;
+            panel3.Height = Btn_Cashier.Height;
+            panel3.Top = Btn_Cashier.Top;
             adminKasirUserControl1.BringToFront();
             adminKasirUserControl1.Show();
             adminBalanceUserControl1.Hide();
+            adminTransactionUserControl1.Hide();
+            adminTopUpUserControl1.Hide();
         }
 
         private void showBank()
         {
-            panel3.Height = btn_bank.Height;
-            panel3.Top = btn_bank.Top;
+            panel3.Height = Btn_Bank.Height;
+            panel3.Top = Btn_Bank.Top;
             adminBalanceUserControl1.BringToFront();
-            adminBalanceUserControl1.Show();
             adminKasirUserControl1.Hide();
+            adminBalanceUserControl1.Show();
+            adminTransactionUserControl1.Hide();
+            adminTopUpUserControl1.Hide();
+        }
+
+        private void showCustomer()
+        {
+            panel3.Height = Btn_Customer.Height;
+            panel3.Top = Btn_Customer.Top;
+            adminCustomerUserControl1.BringToFront();
+            adminCustomerUserControl1.Show();
+            adminKasirUserControl1.Hide();
+            adminBalanceUserControl1.Hide();
+            adminTransactionUserControl1.Hide();
+            adminTopUpUserControl1.Hide();
         }
 
         private void showHistory()
         {
-            panel3.Height = btnTransaction.Height;
-            panel3.Top = btnTransaction.Top;
+            panel3.Height = Btn_Transaction.Height;
+            panel3.Top = Btn_Transaction.Top;
             adminTransactionUserControl1.BringToFront();
+            adminKasirUserControl1.Hide();
+            adminBalanceUserControl1.Hide();
             adminTransactionUserControl1.Show();
+            adminTopUpUserControl1.Hide();
 
         }
 
         private void showTop()
         {
-            panel3.Height = btnTopUp.Height;
-            panel3.Top = btnTopUp.Top;
+            panel3.Height = Btn_Top_Up.Height;
+            panel3.Top = Btn_Top_Up.Top;
             adminTopUpUserControl1.BringToFront();
+            adminKasirUserControl1.Hide();
+            adminBalanceUserControl1.Hide();
+            adminTransactionUserControl1.Hide();
             adminTopUpUserControl1.Show();
         }
 
-        private void Button1_Click_2(object sender, EventArgs e)
+        private void Btn_Cashier_Click(object sender, EventArgs e)
         {
-            panel3.Height = button1.Height;
-            panel3.Top = button1.Top;
+            showCashier();
+        }
+
+        private void Btn_Bank_Click(object sender, EventArgs e)
+        {
+            showBank();
+        }
+
+        private void Btn_Transaction_Click(object sender, EventArgs e)
+        {
+            showHistory();
+        }
+
+        private void Btn_Top_Up_Click(object sender, EventArgs e)
+        {
+            showTop();
+        }
+
+        private void Btn_Customer_Click(object sender, EventArgs e)
+        {
+            showCustomer();
         }
     }
 }

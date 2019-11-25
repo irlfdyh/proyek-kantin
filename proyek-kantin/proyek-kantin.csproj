@@ -54,16 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin\AdminAddCashierDataForm.cs">
+    <Compile Include="admin\balance\AdminAddBalanceDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin\AdminAddCashierDataForm.Designer.cs">
+    <Compile Include="admin\balance\AdminAddBalanceDataForm.Designer.cs">
+      <DependentUpon>AdminAddBalanceDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\cashier\AdminAddCashierDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\cashier\AdminAddCashierDataForm.Designer.cs">
       <DependentUpon>AdminAddCashierDataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin\AdminBalanceUserControl.cs">
+    <Compile Include="admin\balance\AdminBalanceUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="admin\AdminBalanceUserControl.Designer.cs">
+    <Compile Include="admin\balance\AdminBalanceUserControl.Designer.cs">
       <DependentUpon>AdminBalanceUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="admin\AdminDashboardForm.cs">
@@ -72,28 +78,34 @@
     <Compile Include="admin\AdminDashboardForm.Designer.cs">
       <DependentUpon>AdminDashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin\AdminCustomerUserControl.cs">
+    <Compile Include="admin\customer\AdminAddCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\customer\AdminAddCustomerForm.Designer.cs">
+      <DependentUpon>AdminAddCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\customer\AdminCustomerUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="admin\AdminCustomerUserControl.Designer.cs">
+    <Compile Include="admin\customer\AdminCustomerUserControl.Designer.cs">
       <DependentUpon>AdminCustomerUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin\AdminCashierUserControl.cs">
+    <Compile Include="admin\cashier\AdminCashierUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="admin\AdminCashierUserControl.Designer.cs">
+    <Compile Include="admin\cashier\AdminCashierUserControl.Designer.cs">
       <DependentUpon>AdminCashierUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin\AdminTopUpUserControl.cs">
+    <Compile Include="admin\topup\AdminTopUpUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="admin\AdminTopUpUserControl.Designer.cs">
+    <Compile Include="admin\topup\AdminTopUpUserControl.Designer.cs">
       <DependentUpon>AdminTopUpUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin\AdminTransactionUserControl.cs">
+    <Compile Include="admin\transaction\AdminTransactionUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="admin\AdminTransactionUserControl.Designer.cs">
+    <Compile Include="admin\transaction\AdminTransactionUserControl.Designer.cs">
       <DependentUpon>AdminTransactionUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="balance\BalanceAdministratorForm.cs">
@@ -153,25 +165,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="admin\AdminAddCashierDataForm.resx">
+    <EmbeddedResource Include="admin\balance\AdminAddBalanceDataForm.resx">
+      <DependentUpon>AdminAddBalanceDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\cashier\AdminAddCashierDataForm.resx">
       <DependentUpon>AdminAddCashierDataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\AdminBalanceUserControl.resx">
+    <EmbeddedResource Include="admin\balance\AdminBalanceUserControl.resx">
       <DependentUpon>AdminBalanceUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin\AdminDashboardForm.resx">
       <DependentUpon>AdminDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\AdminCustomerUserControl.resx">
+    <EmbeddedResource Include="admin\customer\AdminAddCustomerForm.resx">
+      <DependentUpon>AdminAddCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\customer\AdminCustomerUserControl.resx">
       <DependentUpon>AdminCustomerUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\AdminCashierUserControl.resx">
+    <EmbeddedResource Include="admin\cashier\AdminCashierUserControl.resx">
       <DependentUpon>AdminCashierUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\AdminTopUpUserControl.resx">
+    <EmbeddedResource Include="admin\topup\AdminTopUpUserControl.resx">
       <DependentUpon>AdminTopUpUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\AdminTransactionUserControl.resx">
+    <EmbeddedResource Include="admin\transaction\AdminTransactionUserControl.resx">
       <DependentUpon>AdminTransactionUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cashier\CashierDashboardForm.resx">

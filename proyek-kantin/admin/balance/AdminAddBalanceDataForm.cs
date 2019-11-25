@@ -9,28 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace proyek_kantin
+namespace proyek_kantin.admin
 {
-    public partial class AdminAddCashierDataForm : Form
+    public partial class AdminAddBalanceDataForm : Form
     {
-
-        MySqlConnection connection;
-        MySqlCommand sqlCommand;
-        MySqlDataReader reader;
-
-        public AdminAddCashierDataForm()
+        public AdminAddBalanceDataForm()
         {
             InitializeComponent();
         }
 
         string myConnection = "Server=localhost;Database=proyek-kantin;Uid=root;pwd='';";
 
-        private void addData()
+        private void AddData()
         {
             Random random = new Random();
             int randNum;
 
-            randNum = random.Next(9);
+            randNum = random.Next(10000000);
 
 
             MySqlConnection connection = new MySqlConnection(myConnection);
@@ -38,7 +33,8 @@ namespace proyek_kantin
 
             connection.Open();
 
-            try {
+            try
+            {
                 command = connection.CreateCommand();
                 command.CommandText = "INSERT INTO petugas(nip, username, password, nama, alamat, no_hp, kelas) " +
                     "VALUES (@nip, @username, @password, @name, @address, @phone, @class)";
@@ -47,17 +43,20 @@ namespace proyek_kantin
                 command.Parameters.AddWithValue("@password", tbPassword.Text);
                 command.Parameters.AddWithValue("@name", tbName.Text);
                 command.Parameters.AddWithValue("@address", tbAddress.Text);
-                command.Parameters.AddWithValue("@phone", tbPhone.Text.ToString());
-                command.Parameters.AddWithValue("@class", 1);
+                command.Parameters.AddWithValue("@phone", tbPhone.Text);
+                command.Parameters.AddWithValue("@class", 2);
                 command.ExecuteNonQuery();
-            } catch (Exception e) {
-                MessageBox.Show("error when insert data, '"+ e.Message.ToString() +"'");
-            }
 
-            connection.Close();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error when insert data, '" + e.Message.ToString() + "'");
+            }
         }
 
-        private void editData(string userId) {
+        private void EditData(string userId)
+        {
 
             string query = "UPDATE petugas SET username=@username, password=@password, nama=@name, alamat=@address, " +
                 "no_hp=@phone WHERE id = " + userId + "";
@@ -67,7 +66,8 @@ namespace proyek_kantin
 
             connection.Open();
 
-            try {
+            try
+            {
                 command = connection.CreateCommand();
                 command.CommandText = query;
                 command.Parameters.AddWithValue("@username", tbUsername.Text);
@@ -78,23 +78,28 @@ namespace proyek_kantin
                 command.ExecuteNonQuery();
 
                 connection.Close();
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 MessageBox.Show(e.Message.ToString());
             }
         }
 
-        private void BtnSimpan_Click(object sender, EventArgs e)
+        private void Btn_Save_Click(object sender, EventArgs e)
         {
             string state = label1.Text;
             string id = tbId.Text.ToString();
 
-            if (state == "Tambah Data") {
-                addData();
+            if (state == "Tambah Data")
+            {
+                AddData();
                 MessageBox.Show("Berhasil Menambahkan Data");
 
                 this.Close();
-            } else if (state == "Ubah Data") {
-                editData(id);
+            }
+            else if (state == "Ubah Data")
+            {
+                EditData(id);
                 MessageBox.Show("Berhasil Mengubah Data");
 
                 this.Close();
@@ -105,6 +110,5 @@ namespace proyek_kantin
         {
             this.Close();
         }
-
     }
 }
