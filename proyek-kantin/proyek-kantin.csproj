@@ -192,6 +192,9 @@
     <EmbeddedResource Include="admin\transaction\AdminTransactionUserControl.resx">
       <DependentUpon>AdminTransactionUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="balance\BalanceAdministratorForm.resx">
+      <DependentUpon>BalanceAdministratorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cashier\CashierDashboardForm.resx">
       <DependentUpon>CashierDashboardForm.cs</DependentUpon>
     </EmbeddedResource>

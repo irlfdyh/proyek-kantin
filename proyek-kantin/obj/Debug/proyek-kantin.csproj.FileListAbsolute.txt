@@ -31,3 +31,4 @@ C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.a
 C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.admin.AdminAddBalanceDataForm.resources
 C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek-kantin.csprojAssemblyReference.cache
 C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.admin.customer.AdminAddCustomerForm.resources
+C:\Users\dell\source\repos\proyek-kantin\proyek-kantin\obj\Debug\proyek_kantin.balance.BalanceAdministratorForm.resources
