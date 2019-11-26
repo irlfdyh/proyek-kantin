@@ -23,7 +23,10 @@ namespace proyek_kantin.cashier
         string myConnection = "Server=localhost;Database=proyek-kantin;Uid=root;pwd='';";
 
         public void loadData() {
-            string query = "SELECT * FROM transaksi";
+            DateTime localDate = DateTime.Now;
+            var date = localDate.ToShortDateString().ToString();
+
+            string query = "SELECT * FROM transaksi where tanggal_transaksi = '"+date+"'";
             MySqlConnection connection = new MySqlConnection(myConnection);
 
             try {
@@ -73,9 +76,10 @@ namespace proyek_kantin.cashier
 
         private void Btn_Print_All_Click(object sender, EventArgs e)
         {
+            DateTime date = DateTime.Now;
             DGVPrinter printer = new DGVPrinter();
             printer.Title = "Data Transaksi";
-            printer.SubTitle = "test";
+            printer.SubTitle = date.ToShortDateString();
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             printer.PageNumbers = false;
             printer.PageNumberInHeader = false;

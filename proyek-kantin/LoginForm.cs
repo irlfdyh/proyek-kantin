@@ -83,6 +83,7 @@ namespace proyek_kantin
                                 MessageBox.Show("Selamat datang '" + userName + "'");
 
                                 BalanceAdministratorForm balance = new BalanceAdministratorForm();
+                                balance.tbAccountanName.Text = userName;
                                 balance.ShowDialog();
                                 this.Close();
                             }

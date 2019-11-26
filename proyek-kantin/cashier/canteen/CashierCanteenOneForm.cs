@@ -35,8 +35,6 @@ namespace proyek_kantin
 
         private string customerName = null;
 
-        DateTime localDate = DateTime.Now;
-
         private void price() {
             /** CP is Count Price */
             int riceCP = int.Parse(tbRicePrice.Text);
@@ -263,6 +261,8 @@ namespace proyek_kantin
         {
             int pay = int.Parse(tbPay.Text);
 
+            DateTime localDate = DateTime.Now;
+
             if (pay > 0) {
                 connection.Open();
 
@@ -276,7 +276,7 @@ namespace proyek_kantin
                     sqlCommand.Parameters.AddWithValue("@custName", customerName);
                     sqlCommand.Parameters.AddWithValue("@cashName", tbCashierName.Text);
                     sqlCommand.Parameters.AddWithValue("@pay", tbPay.Text.ToString());
-                    sqlCommand.Parameters.AddWithValue("@date", localDate.ToString());
+                    sqlCommand.Parameters.AddWithValue("@date", localDate.ToShortDateString());
                     sqlCommand.ExecuteNonQuery();
 
                 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Fresh = new System.Windows.Forms.Button();
+            this.Btn_All_Data = new System.Windows.Forms.Button();
+            this.Btn_Print_Data = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -44,31 +44,22 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.Btn_Fresh);
+            this.panel2.Controls.Add(this.Btn_All_Data);
+            this.panel2.Controls.Add(this.Btn_Print_Data);
             this.panel2.Location = new System.Drawing.Point(0, 89);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(736, 473);
-            this.panel2.TabIndex = 3;
+            this.panel2.TabIndex = 5;
             // 
-            // button4
+            // dateTimePicker1
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(272, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 30);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Hapus";
-            this.button4.UseVisualStyleBackColor = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(523, 21);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -78,49 +69,50 @@
             this.dataGridView1.Size = new System.Drawing.Size(709, 395);
             this.dataGridView1.TabIndex = 3;
             // 
-            // button3
+            // Btn_Fresh
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(186, 11);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Ubah";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Btn_Fresh.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Btn_Fresh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Fresh.FlatAppearance.BorderSize = 0;
+            this.Btn_Fresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Fresh.ForeColor = System.Drawing.Color.White;
+            this.Btn_Fresh.Location = new System.Drawing.Point(489, 18);
+            this.Btn_Fresh.Name = "Btn_Fresh";
+            this.Btn_Fresh.Size = new System.Drawing.Size(28, 30);
+            this.Btn_Fresh.TabIndex = 0;
+            this.Btn_Fresh.Text = "R";
+            this.Btn_Fresh.UseVisualStyleBackColor = false;
+            this.Btn_Fresh.Click += new System.EventHandler(this.Btn_Fresh_Click);
             // 
-            // button2
+            // Btn_All_Data
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(100, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Tambah";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Btn_All_Data.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Btn_All_Data.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_All_Data.FlatAppearance.BorderSize = 0;
+            this.Btn_All_Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_All_Data.ForeColor = System.Drawing.Color.White;
+            this.Btn_All_Data.Location = new System.Drawing.Point(131, 11);
+            this.Btn_All_Data.Name = "Btn_All_Data";
+            this.Btn_All_Data.Size = new System.Drawing.Size(111, 30);
+            this.Btn_All_Data.TabIndex = 0;
+            this.Btn_All_Data.Text = "Lihat Semua Data";
+            this.Btn_All_Data.UseVisualStyleBackColor = false;
+            this.Btn_All_Data.Click += new System.EventHandler(this.Btn_All_Data_Click);
             // 
-            // button1
+            // Btn_Print_Data
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(14, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Btn_Print_Data.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Btn_Print_Data.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Print_Data.FlatAppearance.BorderSize = 0;
+            this.Btn_Print_Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Print_Data.ForeColor = System.Drawing.Color.White;
+            this.Btn_Print_Data.Location = new System.Drawing.Point(14, 11);
+            this.Btn_Print_Data.Name = "Btn_Print_Data";
+            this.Btn_Print_Data.Size = new System.Drawing.Size(111, 30);
+            this.Btn_Print_Data.TabIndex = 0;
+            this.Btn_Print_Data.Text = "Cetak Data";
+            this.Btn_Print_Data.UseVisualStyleBackColor = false;
+            this.Btn_Print_Data.Click += new System.EventHandler(this.Btn_Print_Data_Click);
             // 
             // panel1
             // 
@@ -130,7 +122,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(736, 90);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 4;
             // 
             // label1
             // 
@@ -163,11 +155,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_Fresh;
+        private System.Windows.Forms.Button Btn_All_Data;
+        private System.Windows.Forms.Button Btn_Print_Data;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
     }

@@ -34,7 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_Confirm = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbAccountanName = new System.Windows.Forms.TextBox();
+            this.Btn_Print_Data = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 153);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(402, 343);
+            this.dataGridView1.Size = new System.Drawing.Size(523, 343);
             this.dataGridView1.TabIndex = 0;
             // 
             // tbUserNum
@@ -85,7 +86,7 @@
             this.Btn_Confirm.FlatAppearance.BorderSize = 0;
             this.Btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Confirm.ForeColor = System.Drawing.Color.White;
-            this.Btn_Confirm.Location = new System.Drawing.Point(302, 70);
+            this.Btn_Confirm.Location = new System.Drawing.Point(265, 73);
             this.Btn_Confirm.Name = "Btn_Confirm";
             this.Btn_Confirm.Size = new System.Drawing.Size(75, 23);
             this.Btn_Confirm.TabIndex = 4;
@@ -93,22 +94,38 @@
             this.Btn_Confirm.UseVisualStyleBackColor = false;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
             // 
-            // textBox1
+            // tbAccountanName
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 20);
-            this.textBox1.TabIndex = 1;
+            this.tbAccountanName.Location = new System.Drawing.Point(12, 127);
+            this.tbAccountanName.Name = "tbAccountanName";
+            this.tbAccountanName.Size = new System.Drawing.Size(118, 20);
+            this.tbAccountanName.TabIndex = 1;
+            this.tbAccountanName.Visible = false;
+            // 
+            // Btn_Print_Data
+            // 
+            this.Btn_Print_Data.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Btn_Print_Data.FlatAppearance.BorderSize = 0;
+            this.Btn_Print_Data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Print_Data.ForeColor = System.Drawing.Color.White;
+            this.Btn_Print_Data.Location = new System.Drawing.Point(460, 124);
+            this.Btn_Print_Data.Name = "Btn_Print_Data";
+            this.Btn_Print_Data.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Print_Data.TabIndex = 4;
+            this.Btn_Print_Data.Text = "Cetak Data";
+            this.Btn_Print_Data.UseVisualStyleBackColor = false;
+            this.Btn_Print_Data.Click += new System.EventHandler(this.Btn_Print_Data_Click);
             // 
             // BalanceAdministratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 508);
+            this.ClientSize = new System.Drawing.Size(547, 508);
+            this.Controls.Add(this.Btn_Print_Data);
             this.Controls.Add(this.Btn_Confirm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbAccountanName);
             this.Controls.Add(this.tbBalance);
             this.Controls.Add(this.tbUserNum);
             this.Controls.Add(this.dataGridView1);
@@ -129,6 +146,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_Confirm;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox tbAccountanName;
+        private System.Windows.Forms.Button Btn_Print_Data;
     }
 }
